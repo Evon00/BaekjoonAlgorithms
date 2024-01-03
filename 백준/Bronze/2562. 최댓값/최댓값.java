@@ -14,18 +14,16 @@ class Main {
         }
 
         int max = num[0];
+        int index = 0;
         
         for(int i = 1; i < N; i++){
             if(max <= num[i]){
                 max = num[i];
+                index = i;
             }
         }
         bw.write(max+"\n");
-
-        for(int i = 0; i < N; i++){
-            if(num[i] == max)
-                bw.write((i+1)+"\n");
-        }
+        bw.write(index+1+"\n");
         
         br.close();
         bw.flush();
