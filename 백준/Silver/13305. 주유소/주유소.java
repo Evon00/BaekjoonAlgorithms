@@ -26,22 +26,13 @@ class Main {
         }
 
         long cost = 0;
+        long minCost = city[0];
 
         for(int i = 0; i < N-1; i++){
-            long city_cost = city[i];
-            long city_road = road[i];
-            int next_index = i+1;
-            
-            for(int j = next_index; j < N; j++){
-                if(city_cost < city[j]){
-                    city_road += road[j];
-                    i++;
-                }else {
-                    break;
-                }
+            if(city[i] < minCost){
+                minCost = city[i];
             }
-
-            cost += city_cost * city_road;
+            cost += minCost * road[i];
             
         }
         System.out.print(cost);
