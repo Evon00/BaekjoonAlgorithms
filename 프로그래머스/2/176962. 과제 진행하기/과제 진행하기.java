@@ -4,8 +4,8 @@ class Solution {
     public String[] solution(String[][] plans) {
         String[] answer = {};
         
-        Arrays.sort(plans, Comparator.comparingInt(a -> timeToMin(a[1])));
-        
+        //Arrays.sort(plans, Comparator.comparingInt(a -> timeToMin(a[1])));
+        Arrays.sort(plans, (a,b) -> (timeToMin(a[1]) - timeToMin(b[1])));
         List<String> result = new ArrayList<>();
         Stack<Task> paused = new Stack<>();
         int currentTime = timeToMin(plans[0][1]);
